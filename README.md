@@ -1,4 +1,4 @@
-# Chainlink Functions Starter Kit
+# Chainlink Functions Kit + GPT
 
 - [Chainlink Functions Starter Kit](#chainlink-functions-starter-kit)
 - [Overview](#overview)
