@@ -16,7 +16,9 @@ contract FunctionsConsumer is FunctionsClient, ConfirmedOwner {
   bytes32 public latestRequestId;
   bytes public latestResponse;
   bytes public latestError;
-
+  string public latestHaiku;
+  
+  event Haiku(string haiku);
   event OCRResponse(bytes32 indexed requestId, bytes result, bytes err);
 
   /**
@@ -69,6 +71,8 @@ contract FunctionsConsumer is FunctionsClient, ConfirmedOwner {
     latestResponse = response;
     latestError = err;
     emit OCRResponse(requestId, response, err);
+    latestHaiku = string(abi.encodePacked(response));
+    emit Haiku(latestHaiku);
   }
 
   /**
